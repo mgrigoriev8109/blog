@@ -21,4 +21,9 @@ class ArticlesController < ApplicationController
       render :new
     end
   end
+
+  private
+    def article_params
+      params.require(:article).permit(:title, :body)
+    end
 end
